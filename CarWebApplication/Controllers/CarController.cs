@@ -64,7 +64,7 @@ namespace CarWebApplication.Controllers
         }
 
         [HttpDelete]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [Route("[controller]/DeleteCar")]
         public IActionResult DeleteCar([FromQuery] int CarId)
         {
@@ -82,7 +82,7 @@ namespace CarWebApplication.Controllers
         }
 
         [HttpPut]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [Route("[controller]/UpdateCar")]
         public IActionResult UpdateCar([FromQuery] int CarId, [FromBody] CreateCar car)
         {
